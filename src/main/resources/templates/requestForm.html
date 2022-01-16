@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/bootstrap.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter Books Information to Add</h1>
+        <form action="" method="post" th:action="@{/library}">
+            <p>Author: <input type="text" th:object="${author}" th:field="*{name}"></p>
+            <p>Title: <input type="text" th:object="${book}" th:field="*{title}"></p>   
+            <p>Image: <input type="text" th:object="${book}" th:field="*{image}"></p>
+            <br>
+            <input type="submit" value="Save">
+        </form>
+    
+        <h1>Enter Books Information to Seach</h1>
+        <form action="" method="get" th:action="@{/libraryBooks}">
+            <p>ISBN: <input type="text" th:object="${book}" th:field="*{isbn}"></p>
+            <p>Author: <input type="text" th:object="${author}" th:field="*{name}"></p>
+            <p>Title: <input type="text" th:object="${book}" th:field="*{title}"></p> 
+            <input type="submit" value="Search">
+        </form>
+    </div>
+</body>
+</html>
